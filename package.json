@@ -1,0 +1,23 @@
+{
+  "name": "frida-agent-example",
+  "version": "1.0.0",
+  "description": "Example Frida agent written in TypeScript",
+  "private": true,
+  "main": "agent/index.ts",
+  "scripts": {
+    "prepare": "npm run build",
+    "build": " echo please run make to build typescript files",
+    "build_cmoudletest": " frida-compile cmoudletest.ts -o _agent.js -c"
+  },
+  "devDependencies": {
+    "@types/frida-gum": "^17.1.0",
+    "@types/node": "^16.4.8",
+    "@types/sprintf-js": "^1.1.2",
+    "frida-compile": "^10.0.0",
+    "javascript-obfuscator": "^4.0.0"
+  },
+  "dependencies": {
+    "sprintf": "^0.1.5",
+    "sprintf-js": "^1.1.2"
+  }
+}
