@@ -12,7 +12,6 @@ let test0 = function() {
         const char* _ZN7cocos2d11Application10getVersionEv(void*);
         extern void frida_log_callback(const char* s);
         extern void frida_log_cstring_callback(void*);
-        extern void frida_hexdump_callback(void*, int sz);
         void fun(void) {
             frida_log_callback("Hello World from CModule");
             void* pApplication = _ZN7cocos2d11Application11getInstanceEv();
@@ -24,7 +23,6 @@ let test0 = function() {
     {
       frida_log_callback  : fridautils.frida_log_callback,
       frida_log_cstring_callback  : fridautils.frida_log_cstring_callback,
-      frida_hexdump_callback  : fridautils.frida_hexdump_callback,
       // cocos2d::Application::getInstance
       // use this static function  to get a pointer to the current Application instance
       _ZN7cocos2d11Application11getInstanceEv : m.getExportByName("_ZN7cocos2d11Application11getInstanceEv"), 

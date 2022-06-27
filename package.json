@@ -7,7 +7,7 @@
   "scripts": {
     "prepare": "npm run build",
     "build": " echo please run make to build typescript files",
-    "build_cmoudletest": " frida-compile cmoudletest.ts -o _agent.js -c"
+    "build_cmoduletest": " frida-compile cmoduletest.ts -o _agent.js -c"
   },
   "devDependencies": {
     "@types/frida-gum": "^17.1.0",
