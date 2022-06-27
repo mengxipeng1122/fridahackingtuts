@@ -13,13 +13,12 @@ export let frida_hexdump_callback = new NativeCallback(function(sp:NativePointer
     console.log('dump memory', sp, ' of size ', size)
     console.log(hexdump(sp,{
         offset: 0,
-        length: 64,
+        length: size,
         header: true,
         ansi: true
     }))
 },'void', ['pointer','int'])
-//////////////////////////////////////////////////
-// This function tries to TS code with exception handing 
+
 //////////////////////////////////////////////////
 // This function tries to TS code with exception handing 
 // augments:
