@@ -7,6 +7,7 @@
   "scripts": {
     "prepare": "npm run build",
     "build": " echo please run make to build typescript files",
+    "build_sotest": " frida-compile sotest.ts -o _agent.js -c",
     "build_cmoduletest": " frida-compile cmoduletest.ts -o _agent.js -c"
   },
   "devDependencies": {

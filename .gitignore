@@ -1,4 +1,10 @@
 
 node_modules
 
+bins
+libs
+obj
+
+*info.ts
+
 _agent.js
