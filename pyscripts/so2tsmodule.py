@@ -28,7 +28,7 @@ def main():
     #parser.add_argument('-t', '--type',choices=['thumb', 'arm', 'arm64'], default='thumb')
     args = parser.parse_args()
     moudle_path = os.path.dirname(os.path.abspath(__file__))
-    templateFn = os.path.join(moudle_path, 'so2tsmodule.jinjia')
+    templateFn = os.path.join(moudle_path, 'so2tsmodule.jinja')
     ##################################################
     # extract info from so file 
     binary = lief.parse(open(args.input,'rb'))
@@ -66,6 +66,8 @@ def main():
             });
     for k, sym in enumerate(binary.exported_symbols):
         if not sym.exported: continue
+        # avoid duplication
+        if sym.name in [s['name'] for s in exported_symbols]: continue
         exported_symbols.append({
             'name'      : sym.name,
             'address'   : sym.value,
