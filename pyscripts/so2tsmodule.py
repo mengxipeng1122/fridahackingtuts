@@ -80,6 +80,14 @@ def main():
             'sym_name'  : rel.symbol.name,
             'type'      : rel.type,
         })
+    # ctors
+    ctors = [];
+    for k, t in enumerate(binary.ctor_functions):
+        ctors.append(t.address)
+    # dtors
+    dtors = [];
+    for k, t in enumerate(binary.dtor_functions):
+        dtors.append(t.address)
     # write output file
     t = Template(open(templateFn).read())
     s = t.render(
@@ -90,6 +98,8 @@ def main():
         'load_size'         : load_size         ,
         'exported_symbols'  : exported_symbols  ,
         'relocations'       : relocations       ,
+        'ctors'             : ctors             ,
+        'dtors'             : dtors             ,
     });
     open(args.output,'w').write(s)
 

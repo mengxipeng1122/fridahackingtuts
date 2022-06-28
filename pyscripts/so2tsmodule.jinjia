@@ -24,5 +24,19 @@ export var info =
             {{ r   }} , 
         {% endfor %}
     ],
+
+    ctor_functions               : [
+        {% for t in info['ctors'      ] %}
+            {{ t   }} , 
+        {% endfor %}
+    ],
+
+    dtor_functions               : [
+        {% for t in info['dtors'      ] %}
+            {{ t   }} , 
+        {% endfor %}
+    ],
+
+
 }
 ;

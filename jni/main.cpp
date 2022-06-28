@@ -26,3 +26,15 @@ extern "C" void fun(void)
 }
 
 
+
+__attribute__((constructor))
+static void constructor_test0() {
+    frida_log_callback("call constructor_test0 ");
+}
+
+__attribute__((destructor))
+static void destructor_test0() {
+    frida_log_callback("call destructor_test0 ");
+}
+
+
