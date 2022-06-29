@@ -2,6 +2,12 @@
 PACKAGE_NAME=com.ketchapp.knifehit
 APP_TITLE="Knife Hit"
 
+build_inlinehooktest:
+	(cd jni; make );
+	./pyscripts/so2tsmodule.py libs/armeabi-v7a/libmyso.so -o mysoinfo.ts
+	npm run build_inlinehooktest;
+
+
 build_sotest:
 	(cd jni; make );
 	./pyscripts/so2tsmodule.py libs/armeabi-v7a/libmyso.so -o mysoinfo.ts
